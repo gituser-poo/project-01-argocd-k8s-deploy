@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dep-poo-new
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      name: poo-new
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: poo-new
+        image: poo-new
+        ports:
+        - containerPort: 80
